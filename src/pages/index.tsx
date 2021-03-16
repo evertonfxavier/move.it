@@ -1,12 +1,13 @@
 import Head from "next/head";
 import { GetServerSideProps } from "next";
+import { Box, HStack, SimpleGrid, VStack } from "@chakra-ui/react";
+
+import { Profile } from "../components/Profile";
 import { CompleteChallenger } from "../components/CompleteChallenger";
 import { CountDown } from "../components/CountDown";
 import { ExperienceBar } from "../components/ExperienceBar";
-import { Profile } from "../components/Profile";
 import { ChallegenBox } from "../components/ChallegenBox";
 
-import styles from "../styles/pages/Home.module.css";
 import { CountdownProvider } from "../contexts/CountDownContext";
 import { ChallengesProvider } from "../contexts/ChallengesContext";
 
@@ -17,33 +18,43 @@ interface HomeProps {
 }
 
 export default function Home(props: HomeProps) {
-  console.log(props);
-
   return (
     <ChallengesProvider
       level={props.level}
       currentExperience={props.currentExperience}
       challengesCompleted={props.challengesCompleted}
     >
-      <div className={styles.container}>
+      <VStack
+        h="full"
+        maxW="992px"
+        mx="auto"
+        p="2.5rem 2rem"
+        flexDirection="column"
+      >
         <Head>
           <title>Início | Move.it</title>
         </Head>
 
         <ExperienceBar />
         <CountdownProvider>
-          <section>
-            <div>
+          <SimpleGrid
+            as="section"
+            gridTemplateColumns="1fr 1fr"
+            gap="6.25rem"
+            alignContent="center"
+            py="2rem"
+          >
+            <Box>
               <Profile />
               <CompleteChallenger />
               <CountDown />
-            </div>
-            <div>
+            </Box>
+            <Box>
               <ChallegenBox />
-            </div>
-          </section>
+            </Box>
+          </SimpleGrid>
         </CountdownProvider>
-      </div>
+      </VStack>
     </ChallengesProvider>
   );
 }
@@ -56,6 +67,6 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
       level: Number(level),
       currentExperience: Number(currentExperience),
       challengesCompleted: Number(challengesCompleted),
-    }
+    },
   };
 };

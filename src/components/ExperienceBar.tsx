@@ -1,6 +1,6 @@
+import { Box, HStack, Text } from "@chakra-ui/react";
 import { useContext } from "react";
 import { ChallengesContext } from "../contexts/ChallengesContext";
-import styles from "../styles/components/ExperienceBar.module.css";
 
 export function ExperienceBar() {
   const { currentExperience, experienceToNextLevel } = useContext(
@@ -11,19 +11,35 @@ export function ExperienceBar() {
     Math.round(currentExperience * 100) / experienceToNextLevel;
 
   return (
-    <header className={styles.experienceBar}>
-      <span>0 xp</span>
-      <div>
-        <div style={{ width: `${percentToNextLevel}%` }} />
+    <HStack w="full" alignItems="center">
+      <Text as="span" fontSize="1rem">
+        0 xp
+      </Text>
+      <Box
+        flex="1"
+        h="4px"
+        borderRadius="4px"
+        bgColor="#dcdde0"
+        mx="1.5rem"
+        position="relative"
+      >
+        <Box
+          w={percentToNextLevel}
+          h="4px"
+          borderRadius="4px"
+          bgColor="#4cd62b"
+        />
 
-        <span
-          className={styles.currentExperience}
-          style={{ left: `${percentToNextLevel}%` }}
+        <Text
+          position="absolute"
+          left={percentToNextLevel}
+          top="12px"
+          transform="translateX(-50%)"
         >
           {currentExperience} xp
-        </span>
-      </div>
+        </Text>
+      </Box>
       <span>{experienceToNextLevel} xp</span>
-    </header>
+    </HStack>
   );
 }

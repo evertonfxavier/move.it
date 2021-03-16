@@ -1,6 +1,6 @@
-import { useState, useEffect, useContext } from "react";
+import { Box, Button, Flex, Text, VStack } from "@chakra-ui/react";
+import { useContext } from "react";
 import { CountDownContext } from "../contexts/CountDownContext";
-import styles from "../styles/components/CountDown.module.css";
 
 export function CountDown() {
   const {
@@ -18,44 +18,104 @@ export function CountDown() {
     .split("");
 
   return (
-    <div>
-      <div className={styles.countDownContainer}>
-        <div>
-          <span>{minuteLeft}</span>
-          <span>{minuteRight}</span>
-        </div>
-        <span>:</span>
-        <div>
-          <span>{secondsLeft}</span>
-          <span>{secondsRight}</span>
-        </div>
-      </div>
+    <VStack alignItems="center" fontFamily="Rajdhani" color="#2e384d">
+      <Flex
+        alignItems="center"
+        justifyConten="space-evenly"
+        boxShadow="0 0 60px rgba(0, 0, 0, 0.05)"
+        borderRadius="5px"
+        fontSize="10.5rem"
+        textAlign="center"
+        w="full"
+        h="13.2rem"
+      >
+        <Box>
+          <Text as="span" borderRight=" 10px solid #f1f2f3">
+            {minuteLeft}
+          </Text>
+          <Text as="span" borderRight="solid #f1f2f3">
+            {minuteRight}
+          </Text>
+        </Box>
+        <Box>
+          <Text fontSize="6.25rem" mx=".5rem">
+            :
+          </Text>
+        </Box>
+        <Box>
+          <Text as="span" borderLeft="solid #f1f2f3">
+            {secondsLeft}
+          </Text>
+          <Text as="span" borderLeft="solid #f1f2f3">
+            {secondsRight}
+          </Text>
+        </Box>
+      </Flex>
 
       {hasFinished ? (
-        <button disabled className={styles.countDownButton}>
+        <Button
+          disabled
+          w="full"
+          h="5rem"
+          mt="2rem"
+          display="flex"
+          alignItems="center"
+          justifyContent="center"
+          border="0"
+          borderRadius="5px"
+          bgColor="#5965e0"
+          color="white"
+          fontSize="1.25rem"
+          fontWeight="600"
+          transition="bgColor .2s"
+        >
           Ciclo encerrado
-        </button>
+        </Button>
       ) : (
         <>
           {isActive ? (
-            <button
+            <Button
               type="button"
-              className={`${styles.countDownButton} ${styles.countDownButtonActive}`}
               onClick={resetCountdow}
+              w="full"
+              h="5rem"
+              mt="2rem"
+              display="flex"
+              alignItems="center"
+              justifyContent="center"
+              border="0"
+              borderRadius="5px"
+              bgColor="#5965e0"
+              color="white"
+              fontSize="1.25rem"
+              fontWeight="600"
+              transition="bgColor .2s"
             >
               Abandonar ciclo
-            </button>
+            </Button>
           ) : (
-            <button
+            <Button
               type="button"
-              className={styles.countDownButton}
               onClick={startCount}
+              w="full"
+              h="5rem"
+              mt="2rem"
+              display="flex"
+              alignItems="center"
+              justifyContent="center"
+              border="0"
+              borderRadius="5px"
+              bgColor="#5965e0"
+              color="white"
+              fontSize="1.25rem"
+              fontWeight="600"
+              transition="bgColor .2s"
             >
               Iniciar um ciclo
-            </button>
+            </Button>
           )}
         </>
       )}
-    </div>
+    </VStack>
   );
 }
