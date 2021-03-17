@@ -31,9 +31,9 @@ export function ChallegenBox() {
 
   return (
     <VStack
-      h="full"
+      // h="full"
       bgColor="white"
-      p="1.5rem 2rem"
+      // p="1.5rem 2rem"
       borderRadius="5px"
       boxShadow="0 0 60px rgba(0, 0, 0, 0.05)"
       flexDirection="column"

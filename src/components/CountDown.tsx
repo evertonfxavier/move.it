@@ -27,7 +27,7 @@ export function CountDown() {
         fontSize="10.5rem"
         textAlign="center"
         w="full"
-        h="13.2rem"
+        // h="13.2rem"
       >
         <Box>
           <Text as="span" borderRight=" 10px solid #f1f2f3">

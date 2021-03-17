@@ -11,7 +11,7 @@ export function Profile() {
         src="https://github.com/evertonfxavier.png"
         alt="Everton"
         w="5.5rem"
-        h="5.5rem"
+        // h="5.5rem"
         borderRadius="50%"
       />
       <Box ml="1.5rem">

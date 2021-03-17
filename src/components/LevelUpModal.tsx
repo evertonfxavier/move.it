@@ -16,6 +16,7 @@ export function LevelUpModal() {
       left="0"
       right="0"
     >
+      
       <Box
         bgColor="white"
         w="full"

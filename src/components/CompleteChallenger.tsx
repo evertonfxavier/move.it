@@ -9,7 +9,7 @@ export function CompleteChallenger() {
     <HStack
       alignItems="center"
       justifyContent="space-between"
-      my="3.5rem"
+      // my="3.5rem"
       pb="1rem"
       borderBottom="1px solid #d7d8da"
       fontWeight="500"

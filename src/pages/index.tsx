@@ -10,6 +10,8 @@ import { ChallegenBox } from "../components/ChallegenBox";
 
 import { CountdownProvider } from "../contexts/CountDownContext";
 import { ChallengesProvider } from "../contexts/ChallengesContext";
+import Sidebar from "../components/sidebar";
+import Toggle from "../components/toggle";
 
 interface HomeProps {
   level: number;
@@ -24,37 +26,34 @@ export default function Home(props: HomeProps) {
       currentExperience={props.currentExperience}
       challengesCompleted={props.challengesCompleted}
     >
-      <VStack
-        h="full"
-        maxW="992px"
-        mx="auto"
-        p="2.5rem 2rem"
-        flexDirection="column"
-      >
-        <Head>
-          <title>Início | Move.it</title>
-        </Head>
+      <Head>
+        <title>Início | Move.it</title>
+      </Head>
 
-        <ExperienceBar />
-        <CountdownProvider>
-          <SimpleGrid
-            as="section"
-            gridTemplateColumns="1fr 1fr"
-            gap="6.25rem"
-            alignContent="center"
-            py="2rem"
-          >
-            <Box>
-              <Profile />
-              <CompleteChallenger />
+      <HStack>
+        <Sidebar />
+        <HStack w="full" p="2.5rem 0.8rem" justifyContent="space-around">
+          <VStack borderWidth="1px">
+            <Profile />
+            <CompleteChallenger />
+            <Toggle />
+            <ExperienceBar />
+          </VStack>
+
+          <CountdownProvider>
+            <VStack
+              alignContent="center"
+              borderWidth="1px"
+              borderRadius=".8rem"
+              // w="full"
+              // h="calc(100vh - 22rem)"
+            >
               <CountDown />
-            </Box>
-            <Box>
               <ChallegenBox />
-            </Box>
-          </SimpleGrid>
-        </CountdownProvider>
-      </VStack>
+            </VStack>
+          </CountdownProvider>
+        </HStack>
+      </HStack>
     </ChallengesProvider>
   );
 }
