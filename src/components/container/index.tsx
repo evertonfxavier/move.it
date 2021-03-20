@@ -12,7 +12,7 @@ const Container: React.FC<ContainerProps> = ({ children, w }) => {
       borderWidth="1px"
       borderRadius=".8rem"
       w={w}
-      h="calc(100vh - 2rem)"
+      // h="calc(100vh - 2rem)"
       p=".8rem"
     >
       {children}

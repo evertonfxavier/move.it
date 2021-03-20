@@ -17,24 +17,15 @@ export function ExperienceBar({ children }) {
   return (
     <HStack w="full" alignItems="center">
       <CircularProgress
-        size="150px"
-        thickness=".2rem"
+        size="full"
+        thickness=".32rem"
         value={percentToNextLevel}
         color="#5965e0"
       >
-        <CircularProgressLabel fontSize="1.2rem">
+        <CircularProgressLabel>
           {/* {currentExperience}XP */}
           {children}
         </CircularProgressLabel>
-        {/* <CircularProgressLabel fontSize="1.2rem">
-          <Image
-            src="https://github.com/evertonfxavier.png"
-            alt="Everton"
-            w="4.5rem"
-            // h="5.5rem"
-            borderRadius="50%"
-          />
-        </CircularProgressLabel> */}
       </CircularProgress>
 
       {/* <Text

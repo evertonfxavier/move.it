@@ -1,10 +1,13 @@
 import React from "react";
+import { useRouter } from "next/router";
 import { Image, VStack } from "@chakra-ui/react";
 import { IoIosLogIn } from "react-icons/io";
 import Home from "../../icons/home";
 import Ranking from "../../icons/ranking";
 
 export default function Sidebar() {
+  const { push } = useRouter();
+
   return (
     <VStack
       bgColor="gray.300"
@@ -20,7 +23,12 @@ export default function Sidebar() {
         <Home />
         <Ranking />
       </VStack>
-      <IoIosLogIn size="1.6rem" style={{ transform: "rotateY(180deg)" }} />
+      <IoIosLogIn
+        size="1.6rem"
+        style={{ transform: "rotateY(180deg)" }}
+        onClick={() => push("/")}
+        cursor="pointer"
+      />
     </VStack>
   );
 }

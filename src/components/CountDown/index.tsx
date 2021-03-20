@@ -26,7 +26,7 @@ export function CountDown() {
       color="#2e384d"
       bgColor="gray.200"
       w="full"
-      h="6.6rem"
+      h={["4.6rem", "6.6rem"]}
       boxShadow="0 0 60px rgba(0, 0, 0, 0.05)"
     >
       <VStack w="full" h="full">
@@ -76,7 +76,7 @@ export function CountDown() {
         alignItems="center"
         justifyContent="center"
         borderRadius="5px"
-        fontSize="6.4rem"
+        fontSize={["2.4rem", "3.4rem", "4.4rem", "6.4rem"]}
         textAlign="center"
         // w="28rem"
         w="full"
@@ -86,7 +86,7 @@ export function CountDown() {
           {minuteLeft}
           {minuteRight}
         </Text>
-        <Text fontSize="6.25rem">:</Text>
+        <Text fontSize={["2.25rem", "3.25rem", "4.25rem", "6.25rem"]}>:</Text>
         <Text>
           {secondsLeft}
           {secondsRight}

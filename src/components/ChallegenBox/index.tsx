@@ -23,8 +23,13 @@ export function ChallegenBox() {
 
   return (
     <VStack
-      h="full"
       w="full"
+      h={[
+        "calc(100vh - 21rem)",
+        "calc(100vh - 21rem)",
+        "calc(100vh - 12rem)",
+        "calc(100vh - 12rem)",
+      ]}
       bgColor="gray.100"
       p="2rem 2rem"
       borderRadius="5px"

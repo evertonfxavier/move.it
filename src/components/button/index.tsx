@@ -24,25 +24,24 @@ const ButtonComponent: React.FC<ButtonProps> = ({
   click,
 }) => {
   return (
-    <>
-      <Button
-        isDisabled={disabled}
-        onClick={click}
-        w={w}
-        h={h}
-        alignItems="center"
-        justifyContent="center"
-        borderRadius="5px"
-        bgColor={bgColor}
-        color={color}
-        fontSize={fontSize}
-        fontWeight="600"
-        transition=".2s"
-        _hover={{ bgColor: `${hover}` }}
-      >
-        {children}
-      </Button>
-    </>
+    <Button
+      isDisabled={disabled}
+      onClick={click}
+      w={w}
+      h={h}
+      alignItems="center"
+      justifyContent="center"
+      borderLeftRadius="10px"
+      borderRightRadius="0"
+      bgColor={bgColor}
+      color={color}
+      fontSize={fontSize}
+      fontWeight="600"
+      transition=".2s"
+      _hover={{ bgColor: `${hover}` }}
+    >
+      {children}
+    </Button>
   );
 };
 
