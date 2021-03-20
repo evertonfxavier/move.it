@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { GetServerSideProps } from "next";
-import { Box, HStack, SimpleGrid, VStack } from "@chakra-ui/react";
+import { Box, HStack, SimpleGrid, Text, VStack } from "@chakra-ui/react";
 
 import { Profile } from "../components/Profile";
 import { CompleteChallenger } from "../components/CompleteChallenger";
@@ -12,12 +12,16 @@ import { CountdownProvider } from "../contexts/CountDownContext";
 import { ChallengesProvider } from "../contexts/ChallengesContext";
 import Sidebar from "../components/sidebar";
 import Toggle from "../components/toggle";
+import Level from "../components/Level";
+import Container from "../components/container";
 
 interface HomeProps {
   level: number;
   currentExperience: number;
   challengesCompleted: number;
 }
+
+//https://api.github.com/users/evertonfxavier
 
 export default function Home(props: HomeProps) {
   return (
@@ -32,26 +36,38 @@ export default function Home(props: HomeProps) {
 
       <HStack>
         <Sidebar />
-        <HStack w="full" p="2.5rem 0.8rem" justifyContent="space-around">
-          <VStack borderWidth="1px">
-            <Profile />
-            <CompleteChallenger />
-            <Toggle />
-            <ExperienceBar />
-          </VStack>
 
-          <CountdownProvider>
-            <VStack
-              alignContent="center"
+        <HStack w="full" p=".8rem 0.8rem" justifyContent="space-around">
+          <Container w="full">
+            {/* <ExperienceBar>
+              <Profile />
+            </ExperienceBar>
+            <Toggle />
+            <Level />
+            <CompleteChallenger /> */}
+            <HStack
+              w="full"
+              h="10rem"
               borderWidth="1px"
               borderRadius=".8rem"
-              // w="full"
-              // h="calc(100vh - 22rem)"
+              p=".8rem"
             >
+              <ExperienceBar>
+                <Profile />
+              </ExperienceBar>
+              <VStack w="full" borderWidth="1px">
+                <Text>Name</Text>
+                <Text>Description</Text>
+              </VStack>
+            </HStack>
+          </Container>
+
+          <Container w="full">
+            <CountdownProvider>
               <CountDown />
               <ChallegenBox />
-            </VStack>
-          </CountdownProvider>
+            </CountdownProvider>
+          </Container>
         </HStack>
       </HStack>
     </ChallengesProvider>

@@ -1,15 +1,12 @@
 import {
-  Box,
   CircularProgress,
   CircularProgressLabel,
   HStack,
-  Progress,
-  Text,
 } from "@chakra-ui/react";
 import { useContext } from "react";
-import { ChallengesContext } from "../contexts/ChallengesContext";
+import { ChallengesContext } from "../../contexts/ChallengesContext";
 
-export function ExperienceBar() {
+export function ExperienceBar({ children }) {
   const { currentExperience, experienceToNextLevel } = useContext(
     ChallengesContext
   );
@@ -19,14 +16,15 @@ export function ExperienceBar() {
 
   return (
     <HStack w="full" alignItems="center">
-
       <CircularProgress
         size="150px"
+        thickness=".2rem"
         value={percentToNextLevel}
-        color="blue.400"
+        color="#5965e0"
       >
         <CircularProgressLabel fontSize="1.2rem">
-          {currentExperience}XP
+          {/* {currentExperience}XP */}
+          {children}
         </CircularProgressLabel>
         {/* <CircularProgressLabel fontSize="1.2rem">
           <Image

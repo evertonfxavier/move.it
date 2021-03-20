@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Image, Text, VStack } from "@chakra-ui/react";
+import { Image, VStack } from "@chakra-ui/react";
 import { IoIosLogIn } from "react-icons/io";
 import Home from "../../icons/home";
 import Ranking from "../../icons/ranking";
