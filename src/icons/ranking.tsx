@@ -1,16 +1,17 @@
 import React from "react";
 import { Icon } from "@chakra-ui/react";
 
-export default function Ranking() {
+export default function Ranking(props) {
   return (
     <Icon
-      width="26"
-      height="26"
+      {...props}
+      // width="26"
+      // height="26"
       viewBox="0 0 32 32"
       fill="none"
-      xmlns="http://www.w3.org/2000/Icon"
+      style={{ margin: 0 }}
     >
-      <g opacity="0.5">
+      <g>
         <path
           d="M16.0001 20C21.1547 20 25.3334 15.8214 25.3334 10.6667C25.3334 5.51205 21.1547 1.33337 16.0001 1.33337C10.8454 1.33337 6.66675 5.51205 6.66675 10.6667C6.66675 15.8214 10.8454 20 16.0001 20Z"
           stroke="#666666"

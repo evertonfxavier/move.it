@@ -1,11 +1,10 @@
 import React from "react";
 import { Icon } from "@chakra-ui/react";
 
-export default function Home() {
+export default function Home(props) {
   return (
     <Icon
-      width="26"
-      height="26"
+      {...props}
       viewBox="0 0 32 32"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

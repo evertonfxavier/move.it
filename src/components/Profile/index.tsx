@@ -5,6 +5,7 @@ import {
   List,
   ListIcon,
   ListItem,
+  useColorMode,
   VStack,
 } from "@chakra-ui/react";
 import { ChallengesContext } from "../../contexts/ChallengesContext";
@@ -26,6 +27,7 @@ interface IProfile {
 }
 
 export function Profile({ user }: IProfile) {
+  const { colorMode, toggleColorMode } = useColorMode();
   // const { level } = useContext(ChallengesContext);
 
   return (
@@ -54,7 +56,7 @@ export function Profile({ user }: IProfile) {
         w="full"
         maxW="22rem"
         alignItems="start"
-        color="#2e384d"
+        color={colorMode === "dark" ? "gray.300" : "#2e384d"}
         spacing={2}
         fontSize={[".8rem", ".8rem", ".8rem", "1rem"]}
       >

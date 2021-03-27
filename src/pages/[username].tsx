@@ -35,11 +35,13 @@ export default function Home({
         <title>Início | Move.it</title>
       </Head>
 
-      <HStack>
+      <HStack
+        flexDirection={["column-reverse", "column-reverse", "row", "row"]}
+      >
         <Sidebar />
 
         <HStack
-          w="full"
+          w="98%"
           justifyContent="space-around"
           flexDirection={["column", "column", "row", "row"]}
           // mb="auto"
